@@ -1,39 +1,43 @@
-﻿
-@model Survey
-<h1><b>Dojo Survey</b></h1>
-    <form asp-action ="Result" asp-controller="Home" method="post">
-
-        <label asp-for="Name">Your Name:</label>
-        <input class="u-full-width" type="text" placeholder="John Doe" asp-for="Name"><br>
-        <span asp-validation-for="Name"></span>
-    
-        <label asp-for="Locations">Dojo Location:</label>
-        <select class="u-full-width" asp-for="Locations">
-            <option disabled selected> -- Select your Location-- </option>
-            <option value="san jose">San Jose, Ca.</option>
-            <option value="seattle">Seattle, Wa.</option>
-            <option value="Los Angele">Los Angeles, Ca.</option>
-            <option value="dallas">Dallas, Tx.</option>
-            <option value="chicago">Chicago, Il.</option>
-            <option value="berkeley">Berkeley, Ca.</option>
-        </select><br>
-        <span asp-validation-for="Locations"></span>
-
-        <label asp-for="Languages">Favorite Language:</label>
-        <select class="u-full-width" asp-for="Languages">
-            <option disabled selected> -- Select your Favorite Language -- </option>
-            <option value="java">Java</option>
-            <option value="python">Python</option>
-            <option value="javascript">JavaScript</option>
-            <option value="csharp">C#</option>
-            <option value="r">R</option>
-        </select><br>
-        <span asp-validation-for="Languages"></span>
-        <label asp-for="Comments">Comment (Optional)</label>
-            <textarea class="u-full-width" placeholder="What's on you mind?" asp-for="Comments"></textarea><br>
-        <span asp-validation-for="Comments"></span>
-        <input class="button-primary" type="submit"  value="submit">
-    </form>
-
-           
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/home_style.css">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <div class='wrapper'>
+        <h1 class='h1'>Dojo Survey</h1>
+        <form class='form' action='/result' method="post">
+        <div class='section'>
+            Name: <input type='text' name='Name'>
+        </div>
+        <div class='section'>
+            Dojo Location: <select name='Locations'>
+                <option value="San Jose">San Jose</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Mountain View">Mountain View</option>
+                <option calue="Las Angeles">Las Angeles</option>
+            </select>
+        </div>
+        <div class='section'>
+            Favorite Language: <select name='Languages'>
+                <option value="Python">Python</option>
+                <option value="C#/.NET">C#/.NET</option>
+                <option value="HTML">HTML</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Java">Java</option>
+            </select>
+        </div>
+        Comment (optional):
+        <div class='section'>        
+            <textarea name='Comments' cols='10' rows='4'></textarea>
+        </div>
+            <input id='button' type='submit' value='Submit'>
+        </form> 
     </div>
+</body>
+</html>

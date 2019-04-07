@@ -1,5 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/home_style.css">
+    <title>Result</title>
+</head>
 @model Survey
-<h1><b>Submitted Info</b></h1>
+<body>
+    <div class='wrapper'>
+        <u><h1>Submitted Info:</h1></u>
+        <p>Name: @Model.Name </p>
+        <p>Favorite Language: @Model.Languages</p>
+        <p>Location: @Model.Locations</p>
+        <p>Comment: @Model.Comments</p>
+        <form action='/' method="get">
+            <button>Go Back</button>
+        </form>
+    </div>
+</body>
+<!-- <h1><b>Submitted Info</b></h1>
 <fieldset>
     Name: @Model.Name <br></br>
     Language: @Model.Languages <br></br>
@@ -8,4 +29,4 @@
 </fieldset> 
 <button button-primary>
     <a href="/">Go Back</a>
-</button>
+</button> -->
